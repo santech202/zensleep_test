@@ -65,6 +65,7 @@ class _ProgressTabState extends State<ProgressTab> {
                   ),
                   ListView.builder(
                     shrinkWrap: true,
+                    physics: const NeverScrollableScrollPhysics(),
                     itemCount: UtilData.barChartModels.length,
                     itemBuilder: ((context, index) {
                       return BarChart(model: UtilData.barChartModels[index]);
