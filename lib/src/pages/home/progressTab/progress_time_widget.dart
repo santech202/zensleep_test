@@ -13,40 +13,60 @@ class ProgressTimeWidget extends StatelessWidget {
       builder: ((context, themeProvider, child) {
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
+              Column(
                 children: [
-                  Icon(
-                    Icons.timer_sharp,
-                    color: themeProvider.darkTheme ? Styles.lightWhiteColor : Styles.deepPurpleColor,
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.timer_sharp,
+                        color: themeProvider.darkTheme
+                            ? Styles.lightWhiteColor
+                            : Styles.deepPurpleColor,
+                      ),
+                      Text(
+                        'TIME ASLEEP',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      )
+                    ],
                   ),
-                  Text(
-                    'TIME ASLEEP',
-                    style: Theme.of(context).textTheme.bodyText1,
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
+                      Text(
+                        '11',
+                        style: Theme.of(context).textTheme.headline2,
+                      ),
+                      Text(
+                        'hr ',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                      Text(
+                        '39',
+                        style: Theme.of(context).textTheme.headline2,
+                      ),
+                      Text(
+                        'min',
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ],
                   )
                 ],
               ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
+              Column(
                 children: [
                   Text(
-                    '11',
-                    style: Theme.of(context).textTheme.headline2,
+                    'Edit Goal',
+                    style: Theme.of(context).textTheme.bodyText1!.copyWith(color: Styles.calmVioletColor),
                   ),
-                  Text(
-                    'hr ',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
-                  Text(
-                    '39',
-                    style: Theme.of(context).textTheme.headline2,
-                  ),
-                  Text(
-                    'min',
-                    style: Theme.of(context).textTheme.bodyText1,
-                  ),
+                  const SizedBox(height: 5,),
+                  const Icon(
+                    Icons.star,
+                    color: Styles.sunColor,
+                  )
                 ],
               )
             ],

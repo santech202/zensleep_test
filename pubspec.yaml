@@ -21,6 +21,7 @@ dependencies:
   step_progress_indicator: ^1.0.2
   flutter_svg: ^1.1.5
   fl_chart: ^0.55.2
+  animated_toggle_switch: ^0.5.2
 
 dev_dependencies:
   flutter_test:
